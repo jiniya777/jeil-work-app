@@ -31,12 +31,14 @@
   <script type="text/babel">
     const { useState, useEffect } = React;
 
+    // 24시간 30분 단위 시간 선택 목록 (00:00 ~ 24:00 생성, 총 49개)
     const TIME_OPTIONS = [];
-    for (let h = 6; h <= 23; h++) {
+    for (let h = 0; h <= 23; h++) {
       const hh = String(h).padStart(2, '0');
       TIME_OPTIONS.push(`${hh}:00`);
       TIME_OPTIONS.push(`${hh}:30`);
     }
+    TIME_OPTIONS.push('24:00');
 
     const DEFAULT_GAS_URL = 'https://script.google.com/macros/s/AKfycbxp5G9FGPlO-R_PAYSHtJ9F-3lVk0GoFWljqXbDHT7u23SBkwNi3dtXsp57yLyEo-1NOw/exec';
 
